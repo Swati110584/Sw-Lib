@@ -1,0 +1,713 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Assignment 1 Q2 and 3</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><p><em><span>Part 2. Case study - Find a software/lib that uses the testing tool (YTT = Your</span>
+<span>Testing Tool)</span></em></p><p><em><span>Jest</span></em></p><p><span>Q2.1. What is the purpose of the sw/lib, i.e. what does it aim to do for</span>
+<span>users/developers?</span></p><p><span>Ans - Jest is a JavaScript Testing Framework. </span><a href='https://jestjs.io/'><span>Jest</span></a><span> is a</span>
+<span>JavaScript library for </span><strong><span>generating</span></strong><span>, </span><strong><span>executing</span></strong><span>, and </span><strong><span>organizing tests</span></strong><span>.</span>
+<span>Jest is distributed as an NPM package, you can install it in any JavaScript</span>
+<span>project. Jest is one of the most popular test runner and also one of the default</span>
+<span>choice for Create React App.</span></p><p><span>Jest is a fast testing framework that&#39;s easy to set up. It is developed and used</span>
+<span>by Facebook to test all their React applications.</span></p><p><strong><span>Jest</span></strong><span> helps tests to run automatically. It manages metadata about source code</span>
+<span>so it can learn how to run only the relevant test files when a source code file</span>
+<span>is changed.</span></p><p><span>It provides a ‘zero-configuration’ experience and has out-of-the-box features</span>
+<span>such as mocking and code coverage. Can apply this testing framework not only</span>
+<span>to </span><a href='https://www.thoughtworks.com/radar/languages-and-frameworks/react-js'><span>React</span></a><span> applications,</span>
+<span>but also to other JavaScript frameworks.</span></p><ol start='' ><li><strong><span>Jest tests can be written faster than traditional ones</span></strong><span>:- Advantage of</span>
+<span>Jest tests is that you don’t have to change your test when you update the</span>
+<span>components. It’s because Jest updates the snapshot for you once you agree</span>
+<span>for that.</span></li><li><strong><span>Jest tests check if your component behaves correctly</span></strong><span>:- Jest gives you a</span>
+<span>powerful tool which allows you to check how your components behave once you</span>
+<span>pass various combinations of props to them. It helps you check if the passed</span>
+<span>data is properly reflected in the component or node tree. Also, you can</span>
+<span>check if the values are correct. You’re able to combine elements from the</span>
+<span>traditional way of testing like mocking functions which are passed as props.</span>
+<span>You can check if component called it as you expected. For example: if you</span>
+<span>want to check whether your component called the fetch function properly. It</span>
+<span>renders information about the fact that it’s fetching the data from the</span>
+<span>API. </span></li><li><strong><span>Jest allows conditional rendering tests</span></strong><span>:- Applications are built in a</span>
+<span>way that certain data or functionalities are visible and accessible for</span>
+<span>users according to their permissions, roles etc.</span></li><li><strong><span>Visual Diff and Effective Verbosity:-</span></strong><span> A big part of good developer</span>
+<span>experience is increasing your productivity. When it comes to testing, when</span>
+<span>tests fail, you want to quickly identify what went wrong with the test. Jest</span>
+<span>has been made very modular and many of its capabilities were moved out to</span>
+<span>individual modules that the community can make use of.</span></li><li><strong><span>Relaxed Conventions:-</span></strong><span> If you’re coming from different test runners or</span>
+<span>frameworks, you’ll know that they differ in their test suites syntax.</span></li><li><strong><span>Test Doubles:-</span></strong><span> In automated testing, where we write and execute unit and</span>
+<span>integration tests, it is a common practice to make use of different kinds of</span>
+<span>test doubles to isolate different parts of the system. There are different</span>
+<span>methods of isolation with different goals and behaviors, but they are all</span>
+<span>collectively referred to as test doubles. Jest wraps everything into a</span>
+<span>single entry point called the Mock object (jest.fn). The Mock is accessed</span>
+<span>and used in different ways through the test code, so essentially you don’t</span>
+<span>need to bother yourself with such decisions in your test code about types of</span>
+<span>test doubles. It’s another productivity gain with Jest.</span></li></ol><ul><li><span>It’s easy to learn.</span></li><li><span>It requires zero setup.</span></li><li><span>Managing large test cases is relatively easy because of a snapshot capturing</span>
+<span>feature.</span></li></ul><p><span>Q2.2. What are the key technologies used to develop the lib?</span></p><p><span>Ans:- Jest was created by Facebook specifically for testing React applications.</span>
+<span>It’s one of the most popular ways of testing React components. Jest is used for</span>
+<span>testing both JavaScript front-end and back-end applications.</span></p><p><span>Many large companies—including Twitter, Instagram, Pinterest, and Airbnb—use</span>
+<span>Jest for React testing.</span></p><p><span>Jest is a delightful JavaScript Testing Framework with a focus on simplicity.</span></p><p><span>It works with projects</span>
+<span>using: </span><a href='https://babeljs.io/'><span>Babel</span></a><span>, </span><a href='https://www.typescriptlang.org/'><span>TypeScript</span></a><span>, </span><a href='https://nodejs.org/en/'><span>Node</span></a><span>, </span><a href='https://reactjs.org/'><span>React</span></a><span>, </span><a href='https://angular.io/'><span>Angular</span></a><span>, </span><a href='https://vuejs.org/'><span>Vue</span></a><span> and</span>
+<span>more!</span></p><p><span>Jest may be considered a React-specific test runner, in fact it is a universal</span>
+<span>testing platform, with the ability to adapt to any JavaScript library or</span>
+<span>framework.</span></p><ul><li><strong><span>Vue.js</span></strong><span>: Vue.js is an open-source Model–view–viewmodel JavaScript</span>
+<span>framework for building user interfaces and single-page applications.</span></li><li><strong><span>AngularJS</span></strong><span>: AngularJS is a JavaScript-based open-source front-end web</span>
+<span>framework mainly maintained by Google and by a community of individuals and</span>
+<span>corporations to address many of the challenges encountered in developing</span>
+<span>single-page applications. It can be added to an HTML page with a </span><span>&lt;</span><span>script</span><span>&gt;</span>
+<span>tag. AngularJS extends HTML attributes with </span><strong><span>Directives</span></strong><span>, and binds data</span>
+<span>to HTML with </span><strong><span>Expressions</span></strong><span>.</span></li><li><strong><span>Angular</span></strong><span>: Angular is a platform for building mobile and desktop web</span>
+<span>applications. Angular is a TypeScript-based open-source web application</span>
+<span>framework led by the Angular Team at Google and by a community of</span>
+<span>individuals and corporations. Angular is a complete rewrite from the same</span>
+<span>team that built AngularJS. </span></li><li><strong><span>MobX</span></strong><span>: MobX is a battle tested library that makes state management simple</span>
+<span>and scalable by transparently applying functional reactive programming</span>
+<span>(TFRP). The philosophy behind MobX is very simple: Anything that can be</span>
+<span>derived from the application state, should be derived. Automatically, which</span>
+<span>includes the UI, data serialization, server communication, etc.</span></li><li><strong><span>Redux</span></strong><span>: Redux is an open-source JavaScript library for managing</span>
+<span>application state. It is most commonly used with libraries such as React or</span>
+<span>Angular for building user interfaces. A predictable state container for</span>
+<span>JavaScript apps.</span></li><li><strong><span>Express.js</span></strong><span>: Express.js, or simply Express, is a web application</span>
+<span>framework for Node.js, released as free and open-source software under the</span>
+<span>MIT License. It is designed for building web applications and APIs. It has</span>
+<span>been called the de facto standard server framework for Node.js.</span></li><li><strong><span>GatsbyJS:</span></strong><span> Gatsby is a free and open source framework based on React that</span>
+<span>helps developers build blazing fast websites and apps.</span></li><li><strong><span>Hapi.js:</span></strong><span> Build powerful, scalable applications, with minimal</span>
+<span>overhead and full out-of-the-box functionality - your code, your way.</span></li></ul><p><span>Jest itself is actually not a library but a framework. There’s even a CLI tool</span>
+<span>that you can use from the command line. To give an example, the CLI tool allows</span>
+<span>you to run only specific tests that match a pattern. Besides that, it hosts much</span>
+<span>more functionality, which you can find in the </span><a href='https://jestjs.io/docs/en/cli'><span>CLI</span>
+<span>documentation</span></a><span>.</span></p><p><span>In summary, this means that Jest offers a test runner, assertion library, CLI</span>
+<span>tool, and great support for different mocking techniques. All of this makes it a</span>
+<span>framework and not just a library.</span></p><p><span>When you install Jest, you’ll</span>
+<span>get </span><a href='https://codewithhugo.com/jest-fn-spyon-stub-mock/'><span>spies</span></a><span>,</span>
+<span>in-built </span><a href='https://jestjs.io/docs/en/using-matchers'><span>matchers</span></a><span>, and a huge</span>
+<span>mocking library. Since Jest is based on Jasmine, naturally, the tool got all the</span>
+<span>great features of Jasmine. Moreover, Jest supports TypeScript, which</span>
+<span>makes </span><a href='https://angular.io/guide/testing'><span>Angular testing</span></a><span> easier. You can also</span>
+<span>capture snapshots and perform visual regression testing with the help of Jest.</span></p><p><span>Every JavaScript project needs an NPM environment (Node has to be installed on</span>
+<span>your system). Create a new folder and initialize the project with:</span></p><p><span>mkdir getting-started-with-jest &amp;&amp; cd </span><span>$</span><span>_</span></p><p><span>npm init -y</span></p><p><span>Next up install Jest with:</span></p><p><span>npm i jest --save-dev</span></p><p><span>Let&#39;s also configure an NPM script for running our tests from the command line.</span>
+<span>Open up package.json and configure the script named &quot;test&quot; for running Jest:</span></p><p><span>&quot;scripts&quot;: {</span></p><p><span>&quot;test&quot;: &quot;jest&quot;</span></p><p><span>},</span></p><ul><li><strong><span>Easy to Set Up</span></strong></li></ul><p><span>Installation of Jest is very simple. All you need to do is:</span></p><ul><li><span>Get </span><a href='https://www.npmjs.com/get-npm'><span>npm</span></a><span> or </span><a href='https://yarnpkg.com/lang/en/'><span>yarn</span></a><span> on</span>
+<span>your system.</span></li><li><span>Type this code if you’re using npm:</span></li><li><span>If you’re using yarn, type:</span></li></ul><p><span>Installation is done!</span></p><ul><li><strong><span>Speed</span></strong></li></ul><p><span>Airbnb is one of the best examples. Earlier they used Mocha for running tests.</span>
+<span>When they switched to Jest, on a 32 core system, the runtime of test cases</span>
+<span>dropped to 4.5 minutes from 12 minutes. Jest makes your test cases run faster.</span></p><ul><li><strong><span>Specifications and test-driven development</span></strong></li></ul><p><span>Developers like freedom of creativity. But usually there are not many</span>
+<span>privileges. Specifications, that is, a written or verbal description of what to</span>
+<span>build are to be followed. Super important client needs a </span><strong><span>JavaScript function</span>
+<span>that should filter an array of objects.</span></strong></p><ul><li><span>For every object we must check a property called &quot;url&quot; and if the value of</span>
+<span>the property matches a given term then we should include the matching object</span>
+<span>in </span><strong><span>the resulting array</span></strong><span>. Being a test-savvy JavaScript developer you want</span>
+<span>to follow </span><strong><span>test-driven development</span></strong><span>, a discipline which imposes to </span><strong><span>write</span>
+<span>a failing test before starting to code</span></strong><span>.</span></li><li><span>By default Jest expects to find test files in a folder called </span><strong><span>tests</span></strong><span> in</span>
+<span>your project folder. Create the new folder then:</span></li></ul><blockquote><p><span>cd getting-started-with-jest</span></p></blockquote><blockquote><p><span>mkdir </span><span>_</span><em><span>tests</span></em><span>_</span></p></blockquote><ul><li><span>Next up create a new file called filterByTerm.spec.js inside tests. You may</span>
+<span>wonder why the extension includes &quot;.spec.&quot;. It is a convention borrowed from</span>
+<span>Ruby for marking the file as a specification for a given functionality.</span></li></ul><p><span>Q2.3. What kind of automated testing tools are used to test the sw/lib</span>
+<span>(including but possibly more than YTT) and what are their key features?</span></p><p><span>Ans:- Test tools can be divided into the following functionalities. Some provide</span>
+<span>us with only one functionality, and some provide us with a combination.</span></p><ol start='' ><li><strong><span>Test launchers</span></strong><span> are used to launch your tests in the browser or Node.js</span>
+<span>with user config.</span></li></ol><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/1.PNG?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/2.PNG?raw=true" referrerpolicy="no-referrer"></p><ol start='' ><li><strong><span>Testing structure</span></strong><span> providers help you arrange your tests in a readable</span>
+<span>and scalable way.</span></li></ol><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/3.PNG?raw=true" referrerpolicy="no-referrer"></p><p>&nbsp;</p><ol start='' ><li><strong><span>Assertion functions</span></strong><span> are used to check if a test returns what you expect</span>
+<span>it to return and if its’t it throws a clear exception.</span></li></ol><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/4.PNG?raw=true" referrerpolicy="no-referrer"></p><ol start='' ><li><strong><span>Generate and display test progress and summary</span></strong><span>. </span></li><li><strong><span>Mocks, spies, and stubs</span></strong><span> to simulate tests scenarios, isolate the tested</span>
+<span>part of the software from other parts, and attach to processes to see they</span>
+<span>work as expected.</span></li><li><strong><span>Generate and compare snapshots</span></strong><span> to make sure changes to data structures</span>
+<span>from previous test runs are intended by the user’s code changes.</span></li></ol><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/5.PNG?raw=true" referrerpolicy="no-referrer"></p><ol start='' ><li><strong><span>Generate code coverage</span></strong><span> reports of how much of your code is covered by</span>
+<span>tests.</span></li><li><strong><span>Browser Controllers</span></strong><span> simulate user actions for Functional Tests.</span></li></ol><p><span>There are several ways to control browsers to simulate user behavior, like</span>
+<span>clicking the mouse, drag and dropping, typing, and navigating.</span></p><ul><li><span>Some</span>
+<span>tools install </span><a href='https://selenium.dev/documentation/en/webdriver/'><span>drivers</span></a><span> that</span>
+<span>are installed on top of them and control the browser using different</span>
+<span>methods. This is how </span><a href='https://www.seleniumhq.org/'><span>selenium</span></a><span> works:</span></li></ul><p><strong><span>Your code on Node.js </span><span>&lt;</span><span>&gt;</span><span> WebDriver </span><span>&lt;</span><span>&gt;</span><span> FF/Chrome/Safari Driver </span><span>&lt;</span><span>&gt;</span>
+<span>Browser</span></strong></p><ul><li><span>Another way would be to </span><a href='https://dzone.com/articles/testcafe-e2e-testing-tool'><span>inject</span>
+<span>scripts</span></a><span> of a JS code</span>
+<span>that has access to the whole application environment: DOM, network, cookies</span>
+<span>etc… to raise events that simulate user behavior. For example, here is how</span>
+<span>you simulate a click:</span></li></ul><p><strong><span>document.getElementByID(&#39;someButton&#39;).dispatchEvent(clickEvent)</span></strong></p><ul><li><span>Lately, a new way became very popular. Browser maintainers, exposed their</span>
+<span>own native APIs that lets you control the browsers directly. For</span>
+<span>example </span><a href='https://github.com/puppeteer/puppeteer'><span>puppeteer</span></a><span>:</span></li></ul><p><strong><span>Your code on Node.js </span><span>&lt;</span><span>&gt;</span><span> Browser&#39;s API</span></strong></p><ol start='' ><li><strong><span>Visual Regression Tools</span></strong><span> are used to compare your site to its previous</span>
+<span>versions visually by using image comparison techniques.</span></li></ol><p><em><span>Features</span></em></p><ul><li><strong><span>Performance</span></strong><span>- First of all Jest is considered to be faster for big</span>
+<span>projects with many test files by implementing a </span><a href='http://facebook.github.io/jest/blog/2016/03/11/javascript-unit-testing-performance.html'><span>clever parallel testing</span>
+<span>mechanism</span></a><span>.</span></li><li><strong><span>UI</span></strong><span>- Clear and convenient.</span></li><li><strong><span>Ready-To-Go</span></strong><span>- Comes with assertions, spies, and mocks that are equivalent</span>
+<span>to libraries that do the same like </span><a href='https://sinonjs.org/'><span>Sinon</span></a><span>. Libraries</span>
+<span>still can easily be used in case you need some unique features.</span></li><li><strong><span>Globals</span></strong><span>- Like in Jasmine, </span><a href='https://facebook.github.io/jest/docs/en/api.html'><span>it creates test globals by</span>
+<span>default</span></a><span> so there is no</span>
+<span>need to require them. This can be considered bad since it makes your tests</span>
+<span>less flexible and less controllable, but in most cases it just makes your</span>
+<span>life easier.</span></li></ul><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/6.PNG?raw=true" referrerpolicy="no-referrer"></p><ul><li><strong><span>Snapshot</span>
+<span>testing</span></strong><span>- </span><a href='https://github.com/facebook/jest/tree/master/packages/jest-snapshot'><span>jest-snapshot</span></a><span> is</span>
+<span>developed and maintained by Facebook, although it can be used in almost any</span>
+<span>other framework as part of the framework’s integration of the tool or by</span>
+<span>using the right plugins.</span></li><li><strong><span>Great modules mocking</span></strong><span>- Jest provides you with an easy way to mock heavy</span>
+<span>modules to improve testing speed. For example a service can be mocked to</span>
+<span>resolve a promise instead of making a network request.</span></li><li><strong><span>Code coverage</span></strong><span>- Includes a powerful and fast built-in code coverage tool</span>
+<span>that is based on </span><a href='https://github.com/gotwarlost/istanbul'><span>Istanbul</span></a><span>.</span></li><li><strong><span>Reliability</span></strong><span>- Since it has a huge community, and used in many very</span>
+<span>complex projects, is considered very reliable.</span></li><li><strong><span>Support</span></strong><span>- It is currently supported by all the major IDEs and tools.</span></li><li><strong><span>Development</span></strong><span>- jest only updates the files updated, so tests are running</span>
+<span>very fast in watch mode.</span></li></ul><p><span>Q2.4. Which features of the automated testing tools are currently used by the</span>
+<span>test suite?</span></p><p><span>Ans:- For web apps that are based on React, Jest is the preferred framework.</span>
+<span>Apart from React, Jest supports unit testing of Angular, VueJS, NodeJS, and</span>
+<span>others.</span></p><p><span>When you install Jest, you’ll</span>
+<span>get </span><a href='https://codewithhugo.com/jest-fn-spyon-stub-mock/'><span>spies</span></a><span>,</span>
+<span>in-built </span><a href='https://jestjs.io/docs/en/using-matchers'><span>matchers</span></a><span>, and a huge</span>
+<span>mocking library. Since Jest is based on Jasmine, naturally, the tool got all the</span>
+<span>great features of Jasmine. Moreover, Jest supports TypeScript, which</span>
+<span>makes </span><a href='https://angular.io/guide/testing'><span>Angular testing</span></a><span> easier. You can also</span>
+<span>capture snapshots and perform visual regression testing with the help of Jest.</span></p><ul><li><strong><span>Watch Feature</span></strong></li></ul><h3><a name="wouldnt-it-be-great-if-a-testing-tool-ran-automated-test-cases-whenever-you-changed-the-code-well-your-dream-comes-true-with-jest-the-frameworks-can-run-in-watch-mode-all-you-need-to-do-is-run-this-command-in-the-command-line-interface" class="md-header-anchor"></a><span>Wouldn’t it be great if a testing tool ran automated test cases whenever you changed the code? Well, your dream comes true with Jest. The frameworks can run in watch mode. All you need to do is run this command in the command-line interface:</span></h3><p><span>After that, Jest will check the app and execute testing whenever you make any</span>
+<span>changes in the code.</span></p><ul><li><strong><span>Test Coverage Reports</span></strong></li></ul><p><span>What if you test only 80% of your code? What if by mistake you’re unable to test</span>
+<span>the remaining 20%? In that case, chances are that testers may discover some</span>
+<span>critical bugs in a later stage. Jest gives you the solution by providing a</span>
+<span>built-in coverage report. All you need to do is run this command:</span></p><p><span>The framework will provide you a test coverage report that shows what percentage</span>
+<span>of the code has been tested.</span></p><ul><li><strong><span>Extensive Mocking</span></strong></li></ul><p><span>If you care about fast unit testing, mocking is a vital feature. Mocking helps</span>
+<span>you replace dependencies that are slow. Apart from simple mock functions, Jest</span>
+<span>helps you to fully control the dependencies in several ways</span></p><ul><li><span>Timer Mocks: Do you want to test a code that fires after a certain time?</span>
+<span>Timer mocks of Jest helps you to test timer related functions, such</span>
+<span>as setInterval() or setTimeOut().</span></li><li><span>ES6 Class Mocks: You can mock all the classes of Ecma 6 script with Jest’s</span>
+<span>help.</span></li><li><span>Manual Module Mocks: Sometimes you may need to replace an entire module</span>
+<span>instead of a few functions. Jest helps you with that. Once you set a manual</span>
+<span>module, the code will target the mock, not the real module.</span></li></ul><p><span>Jest parallelizes test runs across workers to maximize performance. Console</span>
+<span>messages are buffered and printed together with test results. Sandboxed test</span>
+<span>files and automatic global state resets for every test so no two tests conflict</span>
+<span>with each other.</span></p><ul><li><strong><span>Immersive watch mode</span></strong></li></ul><p><span>Fast interactive watch mode can run only test files related to changed files and</span>
+<span>is optimized to give signal quickly. It is very easy to set up and has a few</span>
+<span>other options. You can also filter tests by their file names or test names. We</span>
+<span>have watch mode working with Mocha, but it isn’t as much powerful. We had to</span>
+<span>build our own solution to run specific test folder or file, but this is</span>
+<span>something Jest offers for free.</span></p><ul><li><strong><span>Code coverage</span></strong></li></ul><p><span>Jest has a built-in code coverage reports which are a breeze to set up. It is</span>
+<span>possible to collect code coverage information from entire projects, including</span>
+<span>untested files.</span></p><ul><li><strong><span>IDE integration</span></strong></li></ul><p><span>Jest integrated with PhpStorm using the same config files that are used to be</span>
+<span>run from CLI and on continuous integration (CircleCI). It is possible to</span>
+<span>navigate with one click to a given test and also to re-run only one test.</span></p><ul><li><strong><span>Custom reporter integration</span></strong></li></ul><p><span>We only need to use a custom reporter to improve integration with Circle CI. It</span>
+<span>is possible with Jest</span>
+<span>using </span><a href='https://github.com/michaelleeallen/jest-junit-reporter'><span>jest-junit-reporter</span></a><span>.</span></p><ul><li><strong><span>Snapshots</span></strong></li></ul><p><span>The aim of snapshot testing is not to replace existing unit tests, but providing</span>
+<span>additional value and making testing painless. In some scenarios, snapshot</span>
+<span>testing can potentially remove the need for unit testing for a particular set of</span>
+<span>functionalities (e.g. React components), but they can work together as well.</span></p><ul><li><strong><span>Multi project runner</span></strong></li></ul><p><span>Jest team recently introduced a way to run multiple projects together which</span>
+<span>would greatly simplify using watch mode and integration with IDEs. </span></p><p><strong><span>Pros:</span></strong></p><ul><li><span>Simpler API, less boilerplate code.</span></li><li><span>Flexible and easy configuration.</span></li><li><span>Test files executed in isolation.</span></li><li><span>Advanced watch mode.</span></li><li><span>Snapshots support = easier start with testing.</span></li><li><span>Code coverage.</span></li></ul><p><span>Q2.5. Which features of the automated testing tools are NOT used by the test</span>
+<span>suite?</span></p><p><span>Ans:- Due to its young age, it may also be more difficult to use Jest across the</span>
+<span>board for larger projects that utilize different types of testing. For example,</span>
+<span>setting up </span><a href='http://www.nightmarejs.org/'><span>Nightmare</span></a><span> for integration testing. It</span>
+<span>is easy to run Nightmare integration tests with Mocha, and the docs have nice</span>
+<span>examples. We could have probably gotten Nightmare working with Jest without much</span>
+<span>work, but this is an example of the friction you might experience if you want to</span>
+<span>integrate Jest across your project stack.</span></p><ol start='' ><li><strong><span>Browser Controllers</span></strong><span> simulate user actions for Functional Tests.</span></li></ol><blockquote><p><span>There are several ways to control browsers to simulate user behavior, like</span>
+<span>clicking the mouse, drag and dropping, typing, and navigating.</span></p></blockquote><ul><li><span>Some</span>
+<span>tools install </span><a href='https://selenium.dev/documentation/en/webdriver/'><span>drivers</span></a><span> that</span>
+<span>are installed on top of them and control the browser using different</span>
+<span>methods. This is how </span><a href='https://www.seleniumhq.org/'><span>selenium</span></a><span> works:</span></li></ul><p><strong><span>Your code on Node.js </span><span>&lt;</span><span>&gt;</span><span> WebDriver </span><span>&lt;</span><span>&gt;</span><span> FF/Chrome/Safari Driver </span><span>&lt;</span><span>&gt;</span>
+<span>Browser</span></strong></p><ul><li><span>Another way would be to </span><a href='https://dzone.com/articles/testcafe-e2e-testing-tool'><span>inject</span>
+<span>scripts</span></a><span> of a JS code</span>
+<span>that has access to the whole application environment: DOM, network, cookies</span>
+<span>etc… to raise events that simulate user behavior. For example, here is how</span>
+<span>you simulate a click:</span></li></ul><p><strong><span>document.getElementByID(&#39;someButton&#39;).dispatchEvent(clickEvent)</span></strong></p><ul><li><span>Lately, a new way became very popular. Browser maintainers, exposed their</span>
+<span>own native APIs that lets you control the browsers directly. For</span>
+<span>example </span><a href='https://github.com/puppeteer/puppeteer'><span>puppeteer</span></a><span>:</span></li></ul><p><strong><span>Your code on Node.js </span><span>&lt;</span><span>&gt;</span><span> Browser&#39;s API</span></strong></p><ol start='' ><li><strong><span>Visual Regression Tools</span></strong><span> are used to compare your site to its previous</span>
+<span>versions visually by using image comparison techniques.</span></li></ol><ul><li><strong><span>Visual regression testing tools </span></strong><span>can also be set up to verify that the</span>
+<span>different screens of your applications are ok visually by a smart comparison</span>
+<span>of screenshots. These</span></li><li><span>screenshots are usually taken as part of your Functional Tests or by</span>
+<span>executing a separate session of browser automation.</span></li></ul><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/7.gif?raw=true" referrerpolicy="no-referrer"></p><p><em><span>Part 3. Interview developers/testers of YTT</span></em><span></span><br/><span>Q3.1. Reach out to the developers of YTT and ask them about their reasons for</span>
+<span>developing YTT. Why this particular type of testing technology? Which situations</span>
+<span>is it good for and less good for?</span></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/8.png?raw=true" referrerpolicy="no-referrer"></p><p><em><span>Response over chat:-“At Testim, we too are developers and testers, striving to</span>
+<span>release quality software faster. We built Testim because writing stable</span>
+<span>end-to-end tests was just too hard. We were the first to build an AI-based</span>
+<span>functional test automation solution. Since we launched in 2014, we&#39;ve been</span>
+<span>adding features, improving quality, and proving our solution with customers</span>
+<span>every day</span></em><span>.”</span></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/9.png?raw=true" referrerpolicy="no-referrer"></p><p><span>Q3.2 Ask them how mature they think YTT is? Is it suitable for use by companies</span>
+<span>developing real-world software at scale? Why / why not?</span></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/10.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/11.png?raw=true" referrerpolicy="no-referrer"></p><p><span>Q3.3. Ask them how they plan to evolve and develop YTT going forward. What are</span>
+<span>the main improvements needed to take the tool to the next level?</span></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/12.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/Swati110584/Sw-Lib/blob/master/13.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="media/c740d6b64e0ffcc4fb795e6c9d667cb4.png" referrerpolicy="no-referrer"></p></div>
+</body>
+</html>
